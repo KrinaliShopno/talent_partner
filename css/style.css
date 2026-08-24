@@ -6071,11 +6071,13 @@ ol li {
 
 .footer-dark .logo-footer {
   margin-bottom: 25px;
-  max-width: 174px;
-  background: white;
-    padding: 10px;
+  /* max-width: 174px;
+  background: white; */
+    /* padding: 10px; */
 }
-
+.logo-footer a img{
+  
+}
 .footer-dark .footer-top {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -28516,9 +28518,9 @@ HOME PAGE 15 START
 /*# sourceMappingURL=style.css.map */
 /* Custom Logo Theme Styles - Added as per request */
 :root {
-  --primary-blue: #023781;
+  --primary-blue: #06285e;
   --vibrant-blue: #0257bb;
-  --golden-yellow: #f9be39;
+  --golden-yellow: #fd6c0b;
 }
 
 /* Reduced Yellow: Using Vibrant Blue for primary elements, and Yellow for hover and specific accents */
@@ -28570,4 +28572,374 @@ HOME PAGE 15 START
 /* Keep the side image border blue to reduce yellow */
 .twm-bnr-right-carousel {
   border-color: var(--vibrant-blue) !important;
+}
+
+/* --- Premium Animations & Custom Sections --- */
+
+        .premium-hover-lift {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+        }
+
+        .premium-hover-lift:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(2, 55, 129, 0.15) !important;
+        }
+
+        .premium-btn {
+            transition: all 0.3s ease !important;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background-color: #023781 !important;
+            color: #fff !important;
+        }
+
+        .premium-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: #0257bb;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .premium-btn:hover::before {
+            width: 100%;
+        }
+
+        .premium-btn:hover {
+            color: #f9be39 !important;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(2, 87, 187, 0.3);
+        }
+
+        .premium-img-zoom-container {
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .premium-img-zoom {
+            transition: transform 0.6s ease;
+        }
+
+        .premium-hover-lift:hover .premium-img-zoom {
+            transform: scale(1.1);
+        }
+
+        .premium-service-box {
+            transition: all 0.4s ease;
+            border: 2px solid transparent !important;
+        }
+
+        .premium-service-box:hover {
+            border-color: #0257bb !important;
+            background-color: #fff !important;
+            box-shadow: 0 15px 30px rgba(2, 87, 187, 0.15);
+            transform: translateY(-10px);
+        }
+
+        .premium-service-icon-wrap {
+            transition: transform 0.4s ease;
+        }
+
+        .premium-service-box:hover .premium-service-icon-wrap {
+            transform: scale(1.1) rotate(10deg);
+            background: #0257bb !important;
+        }
+
+        .premium-service-box:hover .premium-service-icon-wrap i {
+            color: #fff !important;
+        }
+
+        .premium-floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .improved-split-section {
+            display: flex;
+            min-height: 420px;
+            width: 100%;
+            margin-top: 0;
+        }
+
+        @media (max-width: 991px) {
+            .improved-split-section {
+                flex-direction: column;
+            }
+        }
+
+        .imp-split-half {
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 40px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-decoration: none !important;
+            overflow: hidden;
+        }
+
+        .imp-split-left {
+            background: linear-gradient(135deg, #f4f8ff 0%, #e6f0ff 100%);
+        }
+
+        .imp-split-right {
+            background: linear-gradient(135deg, #fffbf5 0%, #fff0e0 100%);
+        }
+
+        /* Giant background watermark icons */
+        .imp-watermark {
+            position: absolute;
+            z-index: 0;
+            font-size: 350px;
+            line-height: 1;
+            transition: all 0.8s ease;
+        }
+
+        .imp-split-left .imp-watermark {
+            color: #0257bb;
+            opacity: 0.03;
+            bottom: -60px;
+            right: -40px;
+            transform: rotate(-15deg);
+        }
+
+        .imp-split-right .imp-watermark {
+            color: #fd6c0b;
+            opacity: 0.03;
+            bottom: -60px;
+            left: -40px;
+            transform: rotate(15deg);
+        }
+
+        .imp-split-half:hover .imp-watermark {
+            transform: scale(1.1) rotate(0deg);
+            opacity: 0.05;
+        }
+
+        .imp-split-content {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .imp-split-half:hover .imp-split-content {
+            transform: translateY(-8px);
+        }
+
+        .imp-split-icon {
+            width: 85px;
+            height: 85px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        /* Glowing pulse effect under the icon */
+        .imp-split-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .imp-split-left .imp-split-icon::after {
+            box-shadow: 0 0 0 15px rgba(2, 87, 187, 0.1);
+        }
+
+        .imp-split-right .imp-split-icon::after {
+            box-shadow: 0 0 0 15px rgba(253, 108, 11, 0.1);
+        }
+
+        .imp-split-half:hover .imp-split-icon::after {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .imp-split-left .imp-split-icon i {
+            color: #0257bb;
+            font-size: 38px;
+        }
+
+        .imp-split-right .imp-split-icon i {
+            color: #fd6c0b;
+            font-size: 38px;
+        }
+
+        .imp-split-half:hover .imp-split-icon {
+            transform: translateY(-5px);
+        }
+
+        .imp-split-title {
+            font-size: 40px;
+            font-weight: 800;
+            color: #06285e;
+            margin-bottom: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        .imp-split-desc {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 35px;
+            max-width: 440px;
+            line-height: 1.6;
+        }
+
+        .imp-split-btn {
+            padding: 15px 45px;
+            border-radius: 35px;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            border: none;
+            transition: all 0.3s ease !important;
+            color: #fff !important;
+            letter-spacing: 1px;
+        }
+
+        .imp-split-left .imp-split-btn {
+            background: #0257bb !important;
+            box-shadow: 0 8px 20px rgba(2, 87, 187, 0.2);
+        }
+
+        .imp-split-right .imp-split-btn {
+            background: #fd6c0b !important;
+            box-shadow: 0 8px 20px rgba(253, 108, 11, 0.2);
+        }
+
+        .imp-split-left:hover .imp-split-btn {
+            background: #06285e !important;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(6, 40, 94, 0.25);
+        }
+
+        .imp-split-right:hover .imp-split-btn {
+            background: #e55e02 !important;
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(229, 94, 2, 0.25);
+        }
+    
+
+/* --- Good Company Cards --- */
+.gc-card-blue {
+    background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+    padding: 60px 50px; border-radius: 40px; box-shadow: 0 20px 50px rgba(6,40,94,0.06); text-align: center; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(2, 87, 187, 0.05); position: relative; overflow: hidden; transition: all 0.4s ease;
+}
+.gc-card-orange {
+    background: linear-gradient(180deg, #ffffff 0%, #fffbf5 100%);
+    padding: 60px 50px; border-radius: 40px; box-shadow: 0 20px 50px rgba(253,108,11,0.06); text-align: center; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(253, 108, 11, 0.05); position: relative; overflow: hidden; transition: all 0.4s ease;
+}
+.gc-icon-wrap-blue {
+    width: 90px; height: 90px; background: #0257bb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 35px; box-shadow: 0 15px 30px rgba(2, 87, 187, 0.25);
+}
+.gc-icon-wrap-orange {
+    width: 90px; height: 90px; background: #fd6c0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 35px; box-shadow: 0 15px 30px rgba(253, 108, 11, 0.25);
+}
+.gc-icon-white {
+    font-size: 40px; color: #fff;
+}
+.gc-title {
+    font-weight: 800; margin-bottom: 25px; color: #06285e; font-size: 32px;
+}
+.text-blue { color: #0257bb; }
+.text-orange { color: #fd6c0b; }
+.gc-desc {
+    color: #666; margin-bottom: 45px; font-size: 18px; line-height: 1.7; flex-grow: 1;
+}
+.gc-btn-blue {
+    border-radius: 35px; padding: 18px 45px; border: none; font-weight: 700; font-size: 16px; background: #0257bb !important; color: #fff !important; box-shadow: 0 10px 20px rgba(2, 87, 187, 0.2); text-transform: uppercase; letter-spacing: 1px;
+}
+.gc-btn-orange {
+    border-radius: 35px; padding: 18px 45px; border: none; font-weight: 700; font-size: 16px; background: #fd6c0b !important; color: #fff !important; box-shadow: 0 10px 20px rgba(253, 108, 11, 0.2); text-transform: uppercase; letter-spacing: 1px;
+}
+
+/* --- Why Choose Us Cards --- */
+.wcu-card {
+    padding: 50px 30px; border: 2px solid #f0f0f0; border-radius: 20px; background-color: #fafafa;
+}
+.wcu-icon-wrap {
+    width: 90px; height: 90px; background: rgba(2, 87, 187, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;
+}
+.wcu-icon {
+    font-size: 40px; color: #0257bb;
+}
+.wcu-title {
+    font-weight: 700; margin-bottom: 15px; color: #023781;
+}
+.wcu-desc {
+    color: #666; font-size: 15px; line-height: 1.7; margin: 0;
+}
+
+/* --- Achievements Section --- */
+.ach-card {
+    background-color: #fff; padding: 40px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.ach-number {
+    font-weight: 800; margin-bottom: 10px; color: #0257bb; font-size: 48px;
+}
+.ach-label {
+    color: #555; font-size: 16px; margin: 0; font-weight: 600;
+}
+
+/* --- Partner Banner --- */
+.partner-banner {
+    background: linear-gradient(135deg, #eef4fc 0%, #dcebfc 100%); border-radius: 30px; padding: 60px; text-align: left; position: relative; overflow: hidden; display: flex; align-items: center; flex-wrap: wrap; box-shadow: 0 20px 40px rgba(2, 87, 187, 0.15);
+}
+.partner-content {
+    flex: 1; min-width: 300px; z-index: 2;
+}
+.partner-title {
+    font-weight: 800; color: #023781; margin-bottom: 20px; font-size: 32px; letter-spacing: -0.5px;
+}
+.partner-list {
+    list-style: none; padding: 0; margin-bottom: 30px;
+}
+.partner-list-item {
+    margin-bottom: 15px; color: #444; font-size: 17px; display: flex; align-items: center;
+}
+.partner-check-icon {
+    margin-right: 15px; color: #0257bb; font-size: 20px;
+}
+.partner-btn {
+    border-radius: 30px; padding: 15px 40px; font-weight: 600; font-size: 16px; border: none;
+}
+.partner-bg-circle-1 {
+    position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.4); border-radius: 50%; z-index: 1;
+}
+.partner-bg-circle-2 {
+    position: absolute; bottom: -80px; right: 100px; width: 150px; height: 150px; background: rgba(255,255,255,0.3); border-radius: 50%; z-index: 1;
 }
