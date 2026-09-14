@@ -28808,7 +28808,7 @@ HOME PAGE 15 START
 .site-text-primary,
 .twm-bnr-title-large span,
 .twm-title {
-  color: var(--vibrant-blue) !important;
+  color: var(--vibrant-blue);
 }
 
 .twm-nav-btn-left .twm-nav-sign-up {
@@ -29608,4 +29608,12 @@ HOME PAGE 15 START
   background: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
   z-index: 1;
+}
+
+/* Fix for apply job form labels and small text visibility */
+.twm-right-section-panel .panel-body label {
+    color: #333 !important;
+}
+.twm-right-section-panel .panel-body small {
+    color: #666 !important;
 }
