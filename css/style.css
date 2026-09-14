@@ -810,7 +810,7 @@ ol li {
 }
 
 .p-t50 {
-  padding-top: 50px;
+  padding-top: 130px;
 }
 
 .p-t60 {
@@ -871,7 +871,7 @@ ol li {
 }
 
 .p-b20 {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .p-b30 {
@@ -1170,7 +1170,7 @@ ol li {
 }
 
 .p-tb20 {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   padding-top: 20px;
 }
 
@@ -1186,7 +1186,7 @@ ol li {
 
 .p-tb50 {
   padding-bottom: 50px;
-  padding-top: 50px;
+  padding-top: 130px;
 }
 
 .p-tb60 {
@@ -6643,7 +6643,7 @@ ol li {
 }
 
 .recent-posts-entry .wt-post-info {
-  margin-left: 105px;
+  /* margin-left: 105px; */
 }
 
 @media (max-width: 1024px) {
@@ -13594,7 +13594,7 @@ strong {
 }
 
 .listing-user .user-name:before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "FontAwesome";
   content: "\f107";
   font-weight: 900;
   transition: 0.5s all ease;
@@ -18032,7 +18032,7 @@ strong {
 }
 
 .twm-login-user-menu .user-name:before {
-  font-family: "Font Awesome 5 Free";
+  font-family: "FontAwesome";
   content: "\f107";
   font-weight: 900;
   transition: 0.5s all ease;
@@ -22207,7 +22207,7 @@ strong {
 .hpage-6-featured-block .inner-content .mid-content {
   display: flex;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   margin-bottom: 20px;
   border-bottom: 1px solid #e1e1e1;
 }
@@ -25037,7 +25037,7 @@ strong {
 
 @media (max-width: 1024px) {
   .twm-home-10-banner-section .container {
-    padding-top: 50px;
+    padding-top: 130px;
   }
 }
 
@@ -26291,7 +26291,7 @@ Home page 11 banner
   .twm-home3-banner-section.twm-bnr-hpage-14 .twm-home3-inner-section .twm-hpage-14-bnr-left-content .twm-bnr-mid-section {
     margin-left: 0px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
 }
 
@@ -29616,4 +29616,65 @@ HOME PAGE 15 START
 }
 .twm-right-section-panel .panel-body small {
     color: #666 !important;
+}
+/* Fix: Add dropdown arrow for desktop menu items */
+@media (min-width: 992px) {
+  .header-nav .nav > li.has-child > a::after {
+    content: "\f107";
+    font-family: "FontAwesome";
+    font-weight: 900;
+    margin-left: 8px;
+    font-size: 14px;
+    display: inline-block;
+  }
+}
+
+/* Responsive Banner Image Fix */
+.responsive-banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Fix for Toggle navigation text visibility */
+.sr-only, .visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Mobile Menu Flex Direction Fix */
+@media (max-width: 991px) {
+    .header-nav.d-flex {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: flex-start;
+    }
+    
+    .logo-header-mobile {
+        width: 100% !important;
+    }
+    
+    .header-nav .nav.navbar-nav {
+        width: 100%;
+    }
+}
+
+/* Fix for massive empty space on inner banners on mobile */
+@media (max-width: 767px) {
+    .wt-bnr-inr {
+        height: auto !important;
+        min-height: 150px;
+        padding-top: 130px;
+        padding-bottom: 40px;
+    }
 }
