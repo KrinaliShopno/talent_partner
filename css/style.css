@@ -6693,7 +6693,7 @@ ol li {
   display: block;
   margin-left: 0px;
   transition: 0.5s all ease;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 300;
 }
 
@@ -27747,7 +27747,10 @@ HOME PAGE 15 START
   margin-bottom: 0px;
   font-size: 16px;
 }
+.twm-bnr-blocks .twm-icon {
+    filter: contrast(0.5);
 
+}
 @media (max-width: 575px) {
   .twm-home16-banner-section .row .twm-h-page-16-bnr-right-section .twm-bnr-blocks-position-wrap {
     display: flex;
