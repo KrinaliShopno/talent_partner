@@ -29231,7 +29231,7 @@ HOME PAGE 15 START
 /* --- Why Choose Us Cards --- */
 .wcu-card {
   padding: 50px 30px;
-  border: 2px solid #f0f0f0;
+  border: 2px solid #f0f0f0 !important;
   border-radius: 20px;
   background-color: #fafafa;
 }
@@ -29479,9 +29479,10 @@ HOME PAGE 15 START
 /* --- Why Choose Us Cards --- */
 .wcu-card {
   padding: 50px 30px;
-  border: 2px solid #f0f0f0;
+  border: 2px solid #f0f0f0 !important;
   border-radius: 20px;
   background-color: #fafafa;
+  height: 100%;
 }
 
 .wcu-icon-wrap {
