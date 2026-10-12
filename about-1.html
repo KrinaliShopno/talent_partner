@@ -121,7 +121,6 @@
                                 <li class="has-child"><a href="javascript:;">Jobs</a>
                                     <ul class="sub-menu">
                                         <li><a href="job.html">Jobs</a></li>
-                                        <li><a href="job-list.html">Jobs list</a></li>
                                         <li><a href="job-detail.html">Jobs Detail</a></li>
                                        
                                         <li><a href="apply-job.html">Apply Jobs</a></li>
@@ -230,10 +229,10 @@
                 <!-- SITE Search -->
                 <div id="search">
                     <span class="close"></span>
-                    <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
-                        <input class="form-control" value="" name="q" type="search" placeholder="Type to search">
+                    <form role="search" id="searchform" action="job.html" method="get" class="radius-xl">
+                        <input class="form-control" value="" name="q" type="search" placeholder="Type to search job vacancy...">
                         <span class="input-group-append">
-                            <button type="button" class="search-btn">
+                            <button type="submit" class="search-btn">
                                 <i class="fa fa-paper-plane"></i>
                             </button>
                         </span>
@@ -280,260 +279,1132 @@
             </div>
             <!-- INNER PAGE BANNER END -->
 
-            <!-- JOBS CATEGORIES SECTION START -->
-            <!-- <div class="section-full p-t120 p-b90 site-bg-gray twm-job-categories-area2">
-                <div class="section-head center wt-small-separator-outer">
-                    <div class="wt-small-separator site-text-primary">
-                        <div>Jobs by Categories</div>
-                    </div>
-                    <h2 class="wt-title">Choose Your Desire Category</h2>
-                </div>
+            <!-- =========================================================
+                 CUSTOM STYLES FOR ABOUT US PAGE
+                 ========================================================= -->
+            <style>
+                :root {
+                    --tp-navy: #06285e;
+                    --tp-orange: #ff9800;
+                    --tp-orange-hover: #f57c00;
+                    --tp-blue-accent: #1967d2;
+                    --tp-slate: #556270;
+                    --tp-dark: #1e293b;
+                    --tp-light-bg: #f8fafc;
+                    --tp-card-border: #e2e8f0;
+                }
 
+                /* Common Custom Tag Badges */
+                .tp-badge {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    background: rgba(255, 152, 0, 0.12);
+                    color: #ff9800;
+                    padding: 6px 18px;
+                    border-radius: 50px;
+                    font-size: 13px;
+                    font-weight: 700;
+                    letter-spacing: 0.5px;
+                    text-transform: uppercase;
+                    margin-bottom: 16px;
+                }
+
+                .tp-badge.tp-badge-navy {
+                    background: rgba(6, 40, 94, 0.08);
+                    color: #06285e;
+                }
+
+                .tp-title-main {
+                    color: #06285e;
+                    font-size: 40px;
+                    font-weight: 800;
+                    line-height: 1.25;
+                }
+
+                .tp-accent {
+                    color: #ff9800;
+                }
+
+                /* --- SECTION 1: ABOUT US HERO --- */
+                .about-lead-text {
+                    font-size: 17px;
+                    line-height: 1.8;
+                    color: #1e293b;
+                    font-weight: 500;
+                    margin-bottom: 16px;
+                }
+
+                .about-regular-text {
+                    font-size: 15px;
+                    line-height: 1.85;
+                    color: #556270;
+                    margin-bottom: 16px;
+                }
+
+                .about-feature-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 24px 0 32px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                }
+
+                .about-feature-list li {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    font-size: 15px;
+                    font-weight: 600;
+                    color: #06285e;
+                }
+
+                .about-feature-list li i {
+                    width: 28px;
+                    height: 28px;
+                    border-radius: 50%;
+                    background: rgba(255, 152, 0, 0.14);
+                    color: #ff9800;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 13px;
+                    flex-shrink: 0;
+                }
+
+                .about-img-showcase {
+                    position: relative;
+                    padding: 15px;
+                }
+
+                .about-img-frame {
+                    position: relative;
+                    border-radius: 24px;
+                    overflow: hidden;
+                    box-shadow: 0 20px 45px rgba(6, 40, 94, 0.12);
+                    background: linear-gradient(135deg, #f0f4fa 0%, #e2eaf5 100%);
+                    min-height: 440px;
+                }
+
+                .about-img-frame img {
+                    width: 100%;
+                    height: 100%;
+                    min-height: 440px;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.6s ease;
+                }
+
+                .about-img-frame:hover img {
+                    transform: scale(1.03);
+                }
+
+                .about-floating-exp {
+                    position: absolute;
+                    bottom: 25px;
+                    left: -15px;
+                    background: #ffffff;
+                    padding: 16px 24px;
+                    border-radius: 18px;
+                    box-shadow: 0 16px 36px rgba(6, 40, 94, 0.16);
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                    border-left: 5px solid #ff9800;
+                    z-index: 2;
+                    animation: tpFloat 4s ease-in-out infinite;
+                }
+
+                .about-floating-exp .exp-icon {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 14px;
+                    background: linear-gradient(135deg, #ff9800, #ffb74d);
+                    color: #ffffff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 22px;
+                }
+
+                .about-floating-exp .exp-val {
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: #06285e;
+                    line-height: 1.1;
+                }
+
+                .about-floating-exp .exp-lbl {
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: #64748b;
+                    margin: 0;
+                }
+
+                .about-floating-trust {
+                    position: absolute;
+                    top: 25px;
+                    right: -10px;
+                    background: #06285e;
+                    color: #ffffff;
+                    padding: 12px 20px;
+                    border-radius: 14px;
+                    box-shadow: 0 12px 28px rgba(6, 40, 94, 0.22);
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    font-size: 13px;
+                    font-weight: 600;
+                    z-index: 2;
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                }
+
+                .about-floating-trust i {
+                    color: #ff9800;
+                    font-size: 18px;
+                }
+
+                @keyframes tpFloat {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-8px); }
+                }
+
+                /* --- SECTION 2: OUR STORY & FOUNDER --- */
+                .story-section {
+                    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+                    position: relative;
+                }
+
+                .founder-card {
+                    background: #ffffff;
+                    border-radius: 24px;
+                    padding: 24px;
+                    box-shadow: 0 15px 40px rgba(6, 40, 94, 0.08);
+                    border: 1px solid #e2e8f0;
+                }
+
+                .founder-media-box {
+                    position: relative;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    background: #f1f5f9;
+                    min-height: 380px;
+                    margin-bottom: 20px;
+                }
+
+                .founder-media-box img {
+                    width: 100%;
+                    height: 100%;
+                    min-height: 380px;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.5s ease;
+                }
+
+                .founder-media-box:hover img {
+                    transform: scale(1.02);
+                }
+
+                .founder-badge-banner {
+                    position: absolute;
+                    bottom: 14px;
+                    left: 14px;
+                    right: 14px;
+                    background: rgba(6, 40, 94, 0.92);
+                    backdrop-filter: blur(8px);
+                    color: #ffffff;
+                    padding: 14px 18px;
+                    border-radius: 14px;
+                    text-align: left;
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                }
+
+                .founder-badge-banner h4 {
+                    color: #ffffff;
+                    font-size: 18px;
+                    font-weight: 700;
+                    margin: 0;
+                }
+
+                .founder-badge-banner p {
+                    color: #ff9800;
+                    font-size: 12px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    margin: 3px 0 0;
+                }
+
+                .founder-quote-banner {
+                    background: #f8fafc;
+                    border-radius: 14px;
+                    padding: 16px 20px;
+                    border-left: 4px solid #ff9800;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    color: #06285e;
+                    font-weight: 600;
+                    display: flex;
+                    gap: 12px;
+                    align-items: flex-start;
+                }
+
+                .founder-quote-banner i {
+                    color: #ff9800;
+                    font-size: 18px;
+                    margin-top: 2px;
+                    flex-shrink: 0;
+                }
+
+                .story-highlight-card {
+                    background: #ffffff;
+                    border-left: 5px solid #ff9800;
+                    border-radius: 0 16px 16px 0;
+                    padding: 22px 25px;
+                    box-shadow: 0 8px 24px rgba(6, 40, 94, 0.05);
+                    margin-bottom: 22px;
+                }
+
+                .story-highlight-card p {
+                    font-size: 16px;
+                    line-height: 1.75;
+                    color: #06285e;
+                    font-weight: 600;
+                    margin: 0;
+                }
+
+                .story-value-pills {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    margin-top: 24px;
+                }
+
+                .story-value-pill {
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 30px;
+                    padding: 8px 18px;
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: #06285e;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    transition: all 0.3s ease;
+                }
+
+                .story-value-pill i {
+                    color: #ff9800;
+                }
+
+                .story-value-pill:hover {
+                    border-color: #ff9800;
+                    background: #fff8f0;
+                    transform: translateY(-2px);
+                }
+
+                /* --- SECTION 3: MISSION & VISION --- */
+                .mv-section {
+                    background: #ffffff;
+                    position: relative;
+                }
+
+                .mv-dual-card {
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 22px;
+                    overflow: hidden;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    transition: all 0.4s ease;
+                    box-shadow: 0 10px 30px rgba(6, 40, 94, 0.05);
+                }
+
+                .mv-dual-card:hover {
+                    transform: translateY(-8px);
+                    border-color: #ff9800;
+                    box-shadow: 0 20px 45px rgba(6, 40, 94, 0.12);
+                }
+
+                .mv-card-head {
+                    padding: 28px 32px 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 1px solid #f1f5f9;
+                }
+
+                .mv-card-head .mv-title h3 {
+                    color: #06285e;
+                    font-size: 24px;
+                    font-weight: 800;
+                    margin: 0;
+                }
+
+                .mv-card-head .mv-title span {
+                    color: #ff9800;
+                    font-size: 12px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+
+                .mv-icon-box {
+                    width: 58px;
+                    height: 58px;
+                    border-radius: 16px;
+                    background: rgba(255, 152, 0, 0.1);
+                    color: #ff9800;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
+                    transition: all 0.3s ease;
+                }
+
+                .mv-dual-card:hover .mv-icon-box {
+                    background: #ff9800;
+                    color: #ffffff;
+                    transform: scale(1.08);
+                }
+
+                .mv-media-container {
+                    position: relative;
+                    height: 280px;
+                    overflow: hidden;
+                    background: #f1f5f9;
+                }
+
+                .mv-media-container img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.5s ease;
+                }
+
+                .mv-dual-card:hover .mv-media-container img {
+                    transform: scale(1.05);
+                }
+
+                .mv-card-content {
+                    padding: 28px 32px;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                .mv-card-content p {
+                    font-size: 15px;
+                    line-height: 1.85;
+                    color: #556270;
+                    margin-bottom: 16px;
+                }
+
+                .mv-callout {
+                    background: #f8fafc;
+                    border-radius: 14px;
+                    padding: 16px 20px;
+                    border-left: 4px solid #06285e;
+                    margin-top: 10px;
+                }
+
+                .mv-dual-card:hover .mv-callout {
+                    border-left-color: #ff9800;
+                }
+
+                .mv-callout p {
+                    font-size: 14px;
+                    line-height: 1.65;
+                    color: #1e293b;
+                    font-weight: 500;
+                    margin: 0;
+                }
+
+                /* --- SECTION 4: WHY CHOOSE US --- */
+                .why-section {
+                    background: #f8fafc;
+                    position: relative;
+                }
+
+                .why-feature-card {
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 20px;
+                    padding: 34px 28px;
+                    height: 100%;
+                    position: relative;
+                    transition: all 0.35s ease;
+                    box-shadow: 0 6px 20px rgba(6, 40, 94, 0.04);
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .why-feature-card:hover {
+                    transform: translateY(-8px);
+                    border-color: #ff9800;
+                    box-shadow: 0 16px 35px rgba(6, 40, 94, 0.12);
+                }
+
+                .why-card-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 22px;
+                }
+
+                .why-icon-wrap {
+                    width: 58px;
+                    height: 58px;
+                    border-radius: 16px;
+                    background: #f4f7fb;
+                    color: #06285e;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 24px;
+                    transition: all 0.3s ease;
+                }
+
+                .why-feature-card:hover .why-icon-wrap {
+                    background: #ff9800;
+                    color: #ffffff;
+                    transform: scale(1.08);
+                }
+
+                .why-watermark-num {
+                    font-size: 28px;
+                    font-weight: 800;
+                    color: #e2e8f0;
+                    transition: color 0.3s ease;
+                }
+
+                .why-feature-card:hover .why-watermark-num {
+                    color: rgba(255, 152, 0, 0.35);
+                }
+
+                .why-card-heading {
+                    color: #06285e;
+                    font-size: 19px;
+                    font-weight: 700;
+                    margin-bottom: 14px;
+                    line-height: 1.35;
+                }
+
+                .why-card-text {
+                    color: #556270;
+                    font-size: 14px;
+                    line-height: 1.75;
+                    margin: 0;
+                    flex: 1;
+                }
+
+                /* --- SECTION 5: CLOSING & CTA --- */
+                .cta-banner-section {
+                    background: linear-gradient(135deg, #04193d 0%, #06285e 60%, #0c3577 100%);
+                    color: #ffffff;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .cta-banner-section::before {
+                    content: '';
+                    position: absolute;
+                    width: 550px;
+                    height: 550px;
+                    background: radial-gradient(circle, rgba(255, 152, 0, 0.16) 0%, rgba(6, 40, 94, 0) 70%);
+                    top: -120px;
+                    right: -120px;
+                    border-radius: 50%;
+                    pointer-events: none;
+                }
+
+                .cta-tag-pill {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    background: rgba(255, 152, 0, 0.18);
+                    border: 1px solid rgba(255, 152, 0, 0.4);
+                    color: #ffb74d;
+                    padding: 7px 20px;
+                    border-radius: 50px;
+                    font-size: 13px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.8px;
+                    margin-bottom: 22px;
+                }
+
+                .cta-main-title {
+                    color: #ffffff;
+                    font-size: 40px;
+                    font-weight: 800;
+                    line-height: 1.25;
+                    margin-bottom: 20px;
+                }
+
+                .cta-lead-text {
+                    color: #f1f5f9;
+                    font-size: 18px;
+                    line-height: 1.75;
+                    font-weight: 500;
+                    margin-bottom: 16px;
+                }
+
+                .cta-body-text {
+                    color: #cbd5e1;
+                    font-size: 15px;
+                    line-height: 1.85;
+                    margin-bottom: 26px;
+                }
+
+                .cta-tagline-callout {
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.18);
+                    border-left: 4px solid #ff9800;
+                    padding: 16px 22px;
+                    border-radius: 12px;
+                    margin-bottom: 32px;
+                    color: #ffffff;
+                    font-size: 15px;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+
+                .cta-tagline-callout i {
+                    color: #ff9800;
+                    font-size: 20px;
+                    flex-shrink: 0;
+                }
+
+                .cta-actions-wrap {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 16px;
+                }
+
+                .cta-btn-primary {
+                    background: #ff9800;
+                    color: #ffffff !important;
+                    font-weight: 700;
+                    padding: 14px 32px;
+                    border-radius: 12px;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.35);
+                    border: none;
+                }
+
+                .cta-btn-primary:hover {
+                    background: #f57c00;
+                    transform: translateY(-2px);
+                    box-shadow: 0 12px 30px rgba(255, 152, 0, 0.45);
+                }
+
+                .cta-btn-outline {
+                    background: rgba(255, 255, 255, 0.12);
+                    color: #ffffff !important;
+                    font-weight: 600;
+                    padding: 14px 28px;
+                    border-radius: 12px;
+                    border: 1px solid rgba(255, 255, 255, 0.25);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    transition: all 0.3s ease;
+                }
+
+                .cta-btn-outline:hover {
+                    background: rgba(255, 255, 255, 0.22);
+                    border-color: rgba(255, 255, 255, 0.45);
+                    transform: translateY(-2px);
+                }
+
+                .cta-media-wrap {
+                    position: relative;
+                    border-radius: 24px;
+                    overflow: hidden;
+                    border: 1px solid rgba(255, 255, 255, 0.15);
+                    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+                    background: rgba(255, 255, 255, 0.05);
+                    min-height: 400px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .cta-media-wrap img {
+                    width: 100%;
+                    height: 100%;
+                    min-height: 400px;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.6s ease;
+                }
+
+                .cta-media-wrap:hover img {
+                    transform: scale(1.03);
+                }
+
+                .cta-floating-info {
+                    position: absolute;
+                    bottom: 25px;
+                    left: 25px;
+                    right: 25px;
+                    background: rgba(6, 40, 94, 0.92);
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    padding: 16px 20px;
+                    border-radius: 16px;
+                    display: flex;
+                    align-items: center;
+                    gap: 14px;
+                }
+
+                .cta-floating-info .info-icon {
+                    width: 44px;
+                    height: 44px;
+                    background: #ff9800;
+                    color: #ffffff;
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    flex-shrink: 0;
+                }
+
+                .cta-floating-info .info-title {
+                    color: #ffffff;
+                    font-size: 15px;
+                    font-weight: 700;
+                    margin: 0;
+                }
+
+                .cta-floating-info .info-sub {
+                    color: #cbd5e1;
+                    font-size: 12px;
+                    margin: 2px 0 0;
+                }
+
+                @media (max-width: 991px) {
+                    .about-img-showcase,
+                    .founder-card,
+                    .cta-media-wrap {
+                        margin-top: 40px;
+                    }
+                    .tp-title-main,
+                    .cta-main-title {
+                        font-size: 30px;
+                    }
+                    .about-floating-exp {
+                        position: relative;
+                        margin-top: 20px;
+                        left: 0;
+                        bottom: 0;
+                    }
+                    .about-floating-trust {
+                        position: relative;
+                        margin-bottom: 15px;
+                        right: 0;
+                        top: 0;
+                        display: inline-flex;
+                    }
+                }
+            </style>
+
+            <!-- =========================================================
+                 SECTION 1: ABOUT US - EMPOWERING BUSINESSES
+                 ========================================================= -->
+            <div class="section-full p-t100 p-b90 site-bg-white about-intro-wrap">
                 <div class="container">
-
-                    <div class="twm-job-categories-section-2 m-b30">
-
-                        <div class="job-categories-style1 m-b30">
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="job-categories-block-2 m-b30">
-                                        <div class="twm-media">
-                                            <div class="flaticon-dashboard"></div>
-                                        </div>
-                                        <div class="twm-content">
-                                            <div class="twm-jobs-available">50 Jobs</div>
-                                            <a href="job-detail.html">UK KPO</a>
-                                        </div>
-                                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="about-intro-content">
+                                <div class="tp-badge">
+                                    <i class="feather-award"></i> About Us
                                 </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="job-categories-block-2 m-b30">
-                                        <div class="twm-media">
-                                            <div class="flaticon-project-management"></div>
-                                        </div>
-                                        <div class="twm-content">
-                                            <div class="twm-jobs-available">50 Jobs</div>
-                                            <a href="job-detail.html">US KPO</a>
-                                        </div>
-                                    </div>
+                                <h2 class="tp-title-main mb-4">
+                                    Empowering Businesses Through the <span class="tp-accent">Right Talent</span>
+                                </h2>
+                                <p class="about-lead-text">
+                                    At <strong>Talent Partner</strong>, we recognize that exceptional talent is the foundation of organizational success, and the right career opportunity can shape an individual's professional future.
+                                </p>
+                                <p class="about-regular-text">
+                                    We are a recruitment and placement consultancy dedicated to connecting organizations with qualified professionals who align with their business objectives, workforce requirements, and organizational culture. Through a structured, relationship-driven approach, we strive to deliver recruitment solutions that address the evolving needs of businesses while supporting candidates in achieving their career aspirations.
+                                </p>
+                                <p class="about-regular-text">
+                                    Our approach extends beyond conventional recruitment. We focus on building enduring professional relationships, facilitating meaningful career opportunities, and enabling organizations to strengthen their workforce for sustainable growth.
+                                </p>
+                                <ul class="about-feature-list">
+                                    <li>
+                                        <i class="feather-check"></i> Structured, Relationship-Driven Methodology
+                                    </li>
+                                    <li>
+                                        <i class="feather-check"></i> Strategic Alignment with Business Objectives & Culture
+                                    </li>
+                                    <li>
+                                        <i class="feather-check"></i> Sustainable Workforce Growth & Career Advancement
+                                    </li>
+                                </ul>
+                                <div class="about-action-btns">
+                                    <a href="contact.html" class="site-button me-3">Contact Us <i class="feather-arrow-right ms-1"></i></a>
+                                    <!-- <a href="for-clients.html" class="site-button-secondry outline">For Clients</a> -->
                                 </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="job-categories-block-2 m-b30">
-                                        <div class="twm-media">
-                                            <div class="flaticon-note"></div>
-                                        </div>
-                                        <div class="twm-content">
-                                            <div class="twm-jobs-available">21 Jobs</div>
-                                            <a href="job-detail.html">AUS KPO</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="job-categories-block-2 m-b30">
-                                        <div class="twm-media">
-                                            <div class="flaticon-customer-support"></div>
-                                        </div>
-                                        <div class="twm-content">
-                                            <div class="twm-jobs-available">50 Jobs</div>
-                                            <a href="job-detail.html">Canada KPO</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="job-categories-block-2 m-b30">
-                                        <div class="twm-media">
-                                            <div class="flaticon-bars"></div>
-                                        </div>
-                                        <div class="twm-content">
-                                            <div class="twm-jobs-available">80 Jobs</div>
-                                            <a href="job-detail.html"> IT Companies</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="job-categories-block-2 m-b30">
-                                        <div class="twm-media">
-                                            <div class="flaticon-user"></div>
-                                        </div>
-                                        <div class="twm-content">
-                                            <div class="twm-jobs-available">50 Jobs</div>
-                                            <a href="job-detail.html">Indian CA Firms</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="job-categories-block-2 m-b30">
-                                        <div class="twm-media">
-                                            <div class="flaticon-computer"></div>
-                                        </div>
-                                        <div class="twm-content">
-                                            <div class="twm-jobs-available">50 Jobs</div>
-                                            <a href="job-detail.html">RPO Industry</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6">
-                                    <div class="job-categories-block-2 m-b30">
-                                        <div class="twm-media">
-                                            <div class="flaticon-coding"></div>
-                                        </div>
-                                        <div class="twm-content">
-                                            <div class="twm-jobs-available">50 Jobs</div>
-                                            <a href="job-detail.html">Web Development</a>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
 
-                        <div class="text-center job-categories-btn">
-                            <a href="job-list.html" class=" site-button">All Categories</a>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="about-img-showcase">
+                                <div class="about-floating-trust">
+                                    <i class="feather-shield"></i> Trusted Recruitment Partner
+                                </div>
+                                <div class="about-img-frame">
+                                    <!-- [IMAGE TAG] About Us Intro Image - Replace src with your image path -->
+                                    <img src="images/about-empower-1.jpg" alt="Empowering Businesses Through the Right Talent" onerror="this.src='images/1.jpg';">
+                                </div>
+                                <div class="about-floating-exp">
+                                    <div class="exp-icon">
+                                        <i class="feather-briefcase"></i>
+                                    </div>
+                                    <div>
+                                        <div class="exp-val">15+ Years</div>
+                                        <div class="exp-lbl">HR Industry Leadership</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================================================
+                 SECTION 5: BUILDING PARTNERSHIPS. CREATING OPPORTUNITIES.
+                 ========================================================= -->
+            <div class="section-full p-t100 p-b100 cta-banner-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 col-md-12">
+                            <div class="cta-banner-content">
+                                <div class="cta-tag-pill">
+                                    <i class="feather-link"></i> Connecting Potential With Opportunity
+                                </div>
+                                <h2 class="cta-main-title">
+                                    Building Partnerships.<br>
+                                    <span style="color: #ff9800;">Creating Opportunities.</span>
+                                </h2>
+                                <p class="cta-lead-text">
+                                    At <strong>Talent Partner</strong>, we believe that successful recruitment begins with understanding people and ends with creating the right connections.
+                                </p>
+                                <p class="cta-body-text">
+                                    Whether you are an organization seeking capable professionals or a candidate exploring your next career opportunity, we are committed to supporting your journey with professionalism, dedication, and a personalized approach.
+                                </p>
+                                <div class="cta-tagline-callout">
+                                    <i class="feather-check-circle"></i>
+                                    <span>Talent Partner — Your Trusted Partner in Talent Acquisition and Career Growth.</span>
+                                </div>
+                                <div class="cta-actions-wrap">
+                                    <a href="contact.html" class="cta-btn-primary">
+                                        Contact Us Today <i class="feather-arrow-right"></i>
+                                    </a>
+                                    <button type="button" class="cta-btn-outline" onclick="document.getElementById('resume-upload-about1').click()">
+                                        <i class="feather-upload"></i> Upload Your Resume
+                                    </button>
+                                    <input type="file" id="resume-upload-about1" style="display: none;" accept=".pdf,.doc,.docx" />
+                                </div>
+                            </div>
                         </div>
 
+                        <div class="col-lg-5 col-md-12">
+                            <div class="cta-media-wrap">
+                                <!-- [IMAGE TAG] Building Partnerships & Opportunities Image - Replace src with your image path -->
+                                <img src="images/about-partnerships.jpg" alt="Building Partnerships. Creating Opportunities." onerror="this.src='images/clients_value_banner.jpg';">
+                                <div class="cta-floating-info">
+                                    <div class="info-icon">
+                                        <i class="feather-trending-up"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="info-title">Talent Acquisition & Career Growth</h4>
+                                        <p class="info-sub">Dedicated to your long-term success</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- =========================================================
+                 SECTION 2: OUR STORY - SAROJ JOSHI (FOUNDER)
+                 ========================================================= -->
+            <div class="section-full p-t100 p-b90 story-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- Founder Image & Profile Card -->
+                        <div class="col-lg-5 col-md-12">
+                            <div class="founder-card">
+                                <div class="founder-media-box">
+                                    <!-- [IMAGE TAG] Founder Saroj Joshi Image - Replace src with your image path -->
+                                    <img src="images/saroj-joshi.jpg" alt="Saroj Joshi - Founder of Talent Partner" onerror="this.src='images/gir-large.png';">
+                                    <div class="founder-badge-banner">
+                                        <h4>Saroj Joshi</h4>
+                                        <p>Founder & HR Director</p>
+                                    </div>
+                                </div>
+                                <div class="founder-quote-banner">
+                                    <i class="fa fa-quote-left"></i>
+                                    <span>Grounded in professionalism, personalized attention, and a deep understanding of client and candidate needs.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Founder Story Content -->
+                        <div class="col-lg-7 col-md-12">
+                            <div class="ps-lg-4 mt-4 mt-lg-0">
+                                <div class="tp-badge tp-badge-navy">
+                                    <i class="feather-book-open"></i> Executive Leadership
+                                </div>
+                                <h2 class="tp-title-main mb-4">
+                                    Our <span class="tp-accent">Story</span>
+                                </h2>
+
+                                <div class="story-highlight-card">
+                                    <p>
+                                        Talent Partner was founded by <strong>Saroj Joshi</strong>, an accomplished HR professional with over <strong>15 years of experience in Human Resources</strong>. Her extensive professional background has provided her with valuable insights into talent acquisition, workforce requirements, employee expectations, and the critical role that effective recruitment plays in organizational performance.
+                                    </p>
+                                </div>
+
+                                <p class="about-regular-text">
+                                    Recognizing the importance of aligning the right talent with the right organization, Saroj established Talent Partner with a vision to deliver recruitment services grounded in professionalism, personalized attention, and a clear understanding of client and candidate needs.
+                                </p>
+
+                                <p class="about-regular-text">
+                                    Her experience brings a practical, <strong style="color: #06285e;">people-centric</strong> perspective to the recruitment process, enabling a thoughtful assessment of candidate capabilities, professional aspirations, role requirements, and organizational expectations.
+                                </p>
+
+                                <p class="about-regular-text">
+                                    At Talent Partner, we leverage this experience to facilitate informed hiring decisions, strengthen employer–candidate relationships, and create value for businesses and professionals alike.
+                                </p>
+
+                                <div class="story-value-pills">
+                                    <span class="story-value-pill"><i class="feather-check-circle"></i> 15+ Years Hands-on Expertise</span>
+                                    <span class="story-value-pill"><i class="feather-check-circle"></i> People-Centric Assessment</span>
+                                    <span class="story-value-pill"><i class="feather-check-circle"></i> Informed Hiring Decisions</span>
+                                    <span class="story-value-pill"><i class="feather-check-circle"></i> Lasting Value Creation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================================
+                 SECTION 3: OUR MISSION & OUR VISION
+                 ========================================================= -->
+            <div class="section-full p-t100  mv-section">
+                <div class="container">
+                    <div class="section-head center wt-small-separator-outer text-center mb-5">
+                        <div class="tp-badge">
+                            <i class="feather-compass"></i> Guiding Philosophy
+                        </div>
+                        <h2 class="tp-title-main">
+                            Our Purpose & <span class="tp-accent">Direction</span>
+                        </h2>
+                        <p style="max-width: 680px; margin: 14px auto 0; color: #556270; font-size: 16px;">
+                            The foundational commitments and forward-looking vision that direct our recruitment excellence.
+                        </p>
                     </div>
 
-                </div>
-
-            </div> -->
-            <!-- JOBS CATEGORIES SECTION END -->
-
-            <!-- HOW IT WORK SECTION START -->
-            <div class="section-full p-t120 p-b90 site-bg-white twm-how-it-work-area2">
-
-                <div class="container">
                     <div class="row">
-                        <div class="col-lg-4 col-md-12">
-                            <!-- TITLE START-->
-                            <div class="section-head left wt-small-separator-outer">
-                                <div class="wt-small-separator site-text-primary">
-                                    <div>How It Works </div>
+                        <!-- Card 1: Our Mission -->
+                        <div class="col-lg-6 col-md-12 m-b30">
+                            <div class="mv-dual-card">
+                                <div class="mv-card-head">
+                                    <div class="mv-title">
+                                        <span>Purpose</span>
+                                        <h3>Our Mission</h3>
+                                    </div>
+                                    <div class="mv-icon-box">
+                                        <i class="feather-target"></i>
+                                    </div>
                                 </div>
-                                <h2 class="wt-title">Follow our steps we will help you.</h2>
-
+                                <div class="mv-media-container">
+                                    <!-- [IMAGE TAG] Our Mission Image - Replace src with your image path -->
+                                    <img src="images/our-mission.jpg" alt="Our Mission - Talent Partner">
+                                </div>
+                                <div class="mv-card-content">
+                                    <div>
+                                        <p>
+                                            To deliver reliable, ethical, and effective recruitment solutions that enable organizations to identify and acquire the right talent while empowering professionals to access opportunities aligned with their skills, experience, and career objectives.
+                                        </p>
+                                    </div>
+                                    <div class="mv-callout">
+                                        <p>
+                                            We are committed to fostering mutually beneficial partnerships that contribute to workforce excellence, professional advancement, and long-term organizational success.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <ul class="description-list">
-                                <li>
-                                    <i class="feather-check"></i>
-                                    Trusted & Quality Job
-                                </li>
-                                <li>
-                                    <i class="feather-check"></i>
-                                    International Job
-                                </li>
-                                <li>
-                                    <i class="feather-check"></i>
-                                    No Extra Charge
-                                </li>
-                                <li>
-                                    <i class="feather-check"></i>
-                                    Top Companies
-                                </li>
-                            </ul>
-                            <!-- TITLE END-->
                         </div>
-                        <div class="col-lg-8 col-md-12">
-                            <div class="twm-w-process-steps-2-wrap">
-                                <div class="row">
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="twm-w-process-steps-2">
-                                            <div class="twm-w-pro-top bg-clr-sky-light bg-sky-light-shadow">
-                                                <span class="twm-large-number text-clr-sky">01</span>
-                                                <div class="twm-media">
-                                                    <span><img src="images/icon1.png" alt="icon1"></span>
-                                                </div>
-                                                <h3 class="twm-title">Discussion <br>Call</h3>
-                                                <p>Share your company's key information which helps candidates before interviews like addresses, holidays, shift timings, etc.</p>
-                                            </div>
 
-                                        </div>
+                        <!-- Card 2: Our Vision -->
+                        <div class="col-lg-6 col-md-12 m-b30">
+                            <div class="mv-dual-card">
+                                <div class="mv-card-head">
+                                    <div class="mv-title">
+                                        <span>Aspiration</span>
+                                        <h3>Our Vision</h3>
                                     </div>
-
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="twm-w-process-steps-2">
-                                            <div class="twm-w-pro-top bg-clr-pink-light bg-pink-light-shadow">
-                                                <span class="twm-large-number text-clr-pink">02</span>
-                                                <div class="twm-media">
-                                                    <span><img src="images/icon2.png" alt="icon2"></span>
-                                                </div>
-                                                <h3 class="twm-title">Place Your <br>Job Vacancies</h3>
-                                                <p>Share your job vacancies with our co-ordinator and get relax for the placement.</p>
-                                            </div>
-
-                                        </div>
+                                    <div class="mv-icon-box">
+                                        <i class="feather-eye"></i>
                                     </div>
-
+                                </div>
+                                <div class="mv-media-container">
+                                    <!-- [IMAGE TAG] Our Vision Image - Replace src with your image path -->
+                                    <img src="images/our-vision.png" alt="Our Vision - Talent Partner" >
+                                </div>
+                                <div class="mv-card-content">
+                                    <div>
+                                        <p>
+                                            To establish Talent Partner as a trusted and preferred recruitment partner, recognized for its commitment to service excellence, professional integrity, and meaningful talent connections.
+                                        </p>
+                                    </div>
+                                    <div class="mv-callout">
+                                        <p>
+                                            We aspire to contribute to the success of organizations and the growth of individuals by facilitating the right talent–opportunity alignment and building lasting professional relationships.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-            <!-- HOW IT WORK SECTION END -->
 
-            <!-- EXPLORE NEW LIFE START -->
-            <div class="section-full p-t120 p-b120 twm-explore-area bg-cover "
-                style="background-image: url(images/bg-1.jpg);">
+            <!-- =========================================================
+                 SECTION 4: WHY CHOOSE TALENT PARTNER?
+                 ========================================================= -->
+            <div class="section-full p-t100 p-b90 why-section">
                 <div class="container">
-
-                    <div class="section-content">
-                        <div class="row">
-
-                            <div class="col-lg-4 col-md-12">
-                                <div class="twm-explore-media-wrap">
-                                    <div class="twm-media">
-                                        <img src="images/gir-large.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-8 col-md-12">
-                                <div class="twm-explore-content-outer">
-                                    <div class="twm-explore-content">
-
-                                        <div class="twm-l-line-1"></div>
-                                        <div class="twm-l-line-2"></div>
-
-                                        <div class="twm-r-circle-1"></div>
-                                        <div class="twm-r-circle-2"></div>
-
-                                        <div class="twm-title-small">Explore New Life</div>
-                                        <div class="twm-title-large">
-                                            <h2>Don’t just find. be found
-                                                put your CV in front of
-                                                great employers </h2>
-                                            <p>We bridge the gap between ambitious companies and skilled professionals to drive long-term business and career growth.</p>
-                                        </div>
-                                        <div class="twm-upload-file">
-                                            <button type="button" class="site-button" onclick="document.getElementById('resume-upload-about1').click()">Upload Your Resume <i
-                                                    class="feather-upload"></i></button>
-                                            <input type="file" id="resume-upload-about1" style="display: none;" accept=".pdf,.doc,.docx" />
-                                        </div>
-
-
-                                    </div>
-                                    <div class="twm-bold-circle-right"></div>
-                                    <div class="twm-bold-circle-left"></div>
-                                </div>
-                            </div>
-
+                    <div class="section-head center wt-small-separator-outer text-center mb-5">
+                        <div class="tp-badge tp-badge-navy">
+                            <i class="feather-check-circle"></i> Key Strengths
                         </div>
+                        <h2 class="tp-title-main">
+                            Why Choose <span class="tp-accent">Talent Partner?</span>
+                        </h2>
+                        <p style="max-width: 720px; margin: 14px auto 0; color: #556270; font-size: 16px;">
+                            We provide deep domain expertise, ethical stewardship, and dedicated focus to empower employers and career aspirants.
+                        </p>
                     </div>
 
+                    <div class="row">
+                        <!-- Pillar 1 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card">
+                                <div class="why-card-header">
+                                    <div class="why-icon-wrap">
+                                        <i class="feather-award"></i>
+                                    </div>
+                                    <span class="why-watermark-num">01</span>
+                                </div>
+                                <h3 class="why-card-heading">15+ Years of HR Expertise</h3>
+                                <p class="why-card-text">
+                                    Our leadership is backed by over 15 years of hands-on Human Resources experience, bringing practical industry knowledge and a strong understanding of recruitment and workforce needs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card">
+                                <div class="why-card-header">
+                                    <div class="why-icon-wrap">
+                                        <i class="feather-user-check"></i>
+                                    </div>
+                                    <span class="why-watermark-num">02</span>
+                                </div>
+                                <h3 class="why-card-heading">Client-Centric Recruitment Approach</h3>
+                                <p class="why-card-text">
+                                    We invest time in understanding each client's business objectives, hiring priorities, and organizational requirements to deliver recruitment support aligned with their needs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card">
+                                <div class="why-card-header">
+                                    <div class="why-icon-wrap">
+                                        <i class="feather-search"></i>
+                                    </div>
+                                    <span class="why-watermark-num">03</span>
+                                </div>
+                                <h3 class="why-card-heading">Quality-Driven Talent Identification</h3>
+                                <p class="why-card-text">
+                                    We emphasize the alignment of qualifications, competencies, experience, and professional suitability to help organizations identify candidates who meet their role requirements.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 4 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card">
+                                <div class="why-card-header">
+                                    <div class="why-icon-wrap">
+                                        <i class="feather-shield"></i>
+                                    </div>
+                                    <span class="why-watermark-num">04</span>
+                                </div>
+                                <h3 class="why-card-heading">Integrity and Transparency</h3>
+                                <p class="why-card-text">
+                                    We believe that trust is the foundation of every successful professional relationship. Our approach is guided by ethical practices, clear communication, and professional accountability.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 5 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card">
+                                <div class="why-card-header">
+                                    <div class="why-icon-wrap">
+                                        <i class="feather-heart"></i>
+                                    </div>
+                                    <span class="why-watermark-num">05</span>
+                                </div>
+                                <h3 class="why-card-heading">People-Focused Philosophy</h3>
+                                <p class="why-card-text">
+                                    We recognize the importance of understanding both employer expectations and candidate aspirations to facilitate productive, mutually beneficial professional relationships.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 6 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card">
+                                <div class="why-card-header">
+                                    <div class="why-icon-wrap">
+                                        <i class="feather-star"></i>
+                                    </div>
+                                    <span class="why-watermark-num">06</span>
+                                </div>
+                                <h3 class="why-card-heading">Commitment to Excellence</h3>
+                                <p class="why-card-text">
+                                    We strive to deliver responsive, dependable, and professional recruitment support, with a focus on service quality, effective coordination, and lasting value.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- EXPLORE NEW LIFE END -->
+
+
 
 
 
@@ -579,7 +1450,7 @@
                                 <!-- <p>Many desktop publishing packages and web page editors now.</p> -->
                                 <ul class="ftr-list">
                                     <li>
-                                        <p><span>Address :</span>Shreeji Signature, Seagat Reliance Road, Sargansan, Gandhinagar 382419</p>
+                                        <p><span>Address :</span>Shreeji Signature, Seagat Reliance Road, Sargasan, Gandhinagar 382419</p>
                                     </li>
                                     <li>
                                         <p><span>Email :</span>hiring@2etalentpartners.com</p>

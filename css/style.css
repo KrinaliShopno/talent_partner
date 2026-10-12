@@ -6333,9 +6333,9 @@ ol li {
 }
 
 .footer-dark .footer-top {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 80px 0px 30px 0px;
+  /* padding: 80px 0px 30px 0px; */
 }
 
 @media (max-width: 991px) {

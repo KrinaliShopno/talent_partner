@@ -237,16 +237,32 @@ All JavaScript fuctions Start
 //  > Top Search bar Show Hide function by = custom.js =================== //	
 
 	function site_search(){
-		jQuery('a[href="#search"]').on('click', function(event) {                    
-		jQuery('#search').addClass('open');
-		jQuery('#search > form > input[type="search"]').focus();
-	});
+		jQuery('a[href="#search"]').on('click', function(event) {
+			event.preventDefault();
+			jQuery('#search').addClass('open');
+			jQuery('#search > form > input[type="search"]').focus();
+		});
 				
-	jQuery('#search, #search button.close').on('click keyup', function(event) {
-		if (event.target === this || event.target.className === 'close') {
-			jQuery(this).removeClass('open');
-		}
-	});  
+		jQuery('#search, #search button.close, #search span.close').on('click keyup', function(event) {
+			if (event.target === this || event.target.className === 'close') {
+				jQuery('#search').removeClass('open');
+			}
+		});
+
+		jQuery('#search form').on('submit', function(e) {
+			e.preventDefault();
+			var searchVal = jQuery.trim(jQuery(this).find('input[name="q"]').val());
+			if (searchVal) {
+				window.location.href = 'job.html?q=' + encodeURIComponent(searchVal);
+			} else {
+				window.location.href = 'job.html';
+			}
+		});
+
+		jQuery('#search .search-btn').on('click', function(e) {
+			e.preventDefault();
+			jQuery('#search form').submit();
+		});
  	}	
 
 //  Client logo Carousel function by = owl.carousel.js ========================== //

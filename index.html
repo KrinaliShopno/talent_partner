@@ -123,7 +123,6 @@
                                 <li class="has-child"><a href="javascript:;">Jobs</a>
                                     <ul class="sub-menu">
                                         <li><a href="job.html">Jobs</a></li>
-                                        <li><a href="job-list.html">Jobs list</a></li>
                                         <li><a href="job-detail.html">Jobs Detail</a></li>
 
                                         <li><a href="apply-job.html">Apply Jobs</a></li>
@@ -232,10 +231,10 @@
                 <!-- SITE Search -->
                 <div id="search">
                     <span class="close"></span>
-                    <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
-                        <input class="form-control" value="" name="q" type="search" placeholder="Type to search">
+                    <form role="search" id="searchform" action="job.html" method="get" class="radius-xl">
+                        <input class="form-control" value="" name="q" type="search" placeholder="Type to search job vacancy...">
                         <span class="input-group-append">
-                            <button type="button" class="search-btn">
+                            <button type="submit" class="search-btn">
                                 <i class="fa fa-paper-plane"></i>
                             </button>
                         </span>
@@ -271,61 +270,48 @@
                                 job.</div>
 
                             <div class="twm-bnr-search-bar">
-                                <form>
+                                <form action="job.html" method="get">
                                     <div class="row">
                                         <!--Title-->
                                         <div class="form-group col-xl-5 col-lg-6 col-md-6">
                                             <label>What</label>
                                             <select class="wt-search-bar-select selectpicker" data-live-search="true"
-                                                title="" id="j-Job_Title" data-bv-field="size">
+                                                name="q" id="j-Job_Title" data-bv-field="size">
                                                 <option class="bs-title-option" value="">Select Category</option>
-                                                <option selected="">Job Title</option>
-                                                <option>Web Designer</option>
-                                                <option>Developer</option>
-                                                <option>Acountant</option>
-                                                <option>UK Accountant</option>
-                                                <option>UK Bookkeeper</option>
-                                                <option>UK Tax Preparer</option>
-                                                <option>US Accountant</option>
-                                                <option>US Tax Preparer</option>
-                                                <option>AUS Accountant</option>
-                                                <option>AUS Bookkeeper</option>
-                                                <option>UK Senior Accountant</option>
-                                                <option>UK Assistant Manager</option>
-                                                <option>UK Manager</option>
-                                                <option>US Assistant Manager</option>
-                                                <option>US Manager</option>
-                                                <option>UK Payroll</option>
-                                                <option>US Payroll</option>
+                                                <option value="" selected="">Job Title</option>
+                                                <option value="Web Designer">Web Designer</option>
+                                                <option value="Developer">Developer</option>
+                                                <option value="Accountant">Acountant</option>
+                                                <option value="UK Accountant">UK Accountant</option>
+                                                <option value="UK Bookkeeper">UK Bookkeeper</option>
+                                                <option value="UK Tax Preparer">UK Tax Preparer</option>
+                                                <option value="US Accountant">US Accountant</option>
+                                                <option value="US Tax Preparer">US Tax Preparer</option>
+                                                <option value="AUS Accountant">AUS Accountant</option>
+                                                <option value="AUS Bookkeeper">AUS Bookkeeper</option>
+                                                <option value="UK Senior Accountant">UK Senior Accountant</option>
+                                                <option value="UK Assistant Manager">UK Assistant Manager</option>
+                                                <option value="UK Manager">UK Manager</option>
+                                                <option value="US Assistant Manager">US Assistant Manager</option>
+                                                <option value="US Manager">US Manager</option>
+                                                <option value="UK Payroll">UK Payroll</option>
+                                                <option value="US Payroll">US Payroll</option>
                                             </select>
                                         </div>
-
-                                        <!--All Category-->
-                                        <!-- <div class="form-group col-xl-3 col-lg-6 col-md-6">
-                                            <label>Type</label>
-                                            <select class="wt-search-bar-select selectpicker" data-live-search="true"
-                                                title="" id="j-All_Category" data-bv-field="size">
-                                                <option class="bs-title-option" value="">Select Category</option>
-                                                <option selected="">All Category</option>
-                                                <option>Web Designer</option>
-                                                <option>Developer</option>
-                                                <option>Acountant</option>
-                                            </select>
-                                        </div> -->
 
                                         <!--Location-->
                                         <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                             <label>Location</label>
                                             <div class="twm-inputicon-box">
-                                                <input name="username" type="text" required="" class="form-control"
-                                                    placeholder="Search...">
+                                                <input name="location" type="text" class="form-control"
+                                                    placeholder="Search location...">
                                                 <i class="twm-input-icon fas fa-map-marker-alt"></i>
                                             </div>
                                         </div>
 
                                         <!--Find job btn-->
                                         <div class="form-group col-xl-3 col-lg-6 col-md-6">
-                                            <button type="button" class="site-button">Find Job</button>
+                                            <button type="submit" class="site-button">Find Job</button>
                                         </div>
 
                                     </div>
@@ -334,11 +320,11 @@
 
                             <div class="twm-bnr-popular-search">
                                 <span class="twm-title">Popular Searches:</span>
-                                <a href="job-list.html">Developer</a> ,
-                                <a href="job-list.html">Designer</a> ,
-                                <a href="job-list.html">Acountant</a> ,
-                                <a href="job-list.html">UK Accountant</a>,
-                                 <a href="job-list.html">UK Bookkeeper</a> ...
+                                <a href="job.html?q=Developer">Developer</a> ,
+                                <a href="job.html?q=Designer">Designer</a> ,
+                                <a href="job.html?q=Accountant">Accountant</a> ,
+                                <a href="job.html?q=UK+Accountant">UK Accountant</a>,
+                                 <a href="job.html?q=UK+Bookkeeper">UK Bookkeeper</a> ...
                             </div>
                         </div>
                     </div>
@@ -438,7 +424,7 @@
             <div class="improved-split-section ">
 
                 <!-- Left Section (Job Seeker) -->
-                <a href="job-list.html" class="imp-split-half imp-split-left">
+                <a href="job.html" class="imp-split-half imp-split-left">
                     <i class="flaticon-deal imp-watermark"></i>
                     <div class="imp-split-content">
                         <div class="imp-split-icon">
@@ -1154,7 +1140,7 @@
                                 </li>
                             </ul>
                             <div class="text-center m-b30">
-                                <a href="job-list.html" class=" site-button">Browse All Jobs</a>
+                                <a href="job.html" class=" site-button">Browse All Jobs</a>
                             </div>
                         </div>
                     </div>
@@ -1609,7 +1595,7 @@
                                 <!-- <p>Many desktop publishing packages and web page editors now.</p> -->
                                 <ul class="ftr-list">
                                     <li>
-                                        <p><span>Address :</span>Shreeji Signature, Seagat Reliance Road, Sargansan, Gandhinagar 382419</p>
+                                        <p><span>Address :</span>Shreeji Signature, Seagat Reliance Road, Sargasan, Gandhinagar 382419</p>
                                     </li>
                                     <li>
                                         <p><span>Email :</span>hiring@2etalentpartners.com</p>

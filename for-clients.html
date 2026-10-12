@@ -122,7 +122,6 @@
                                                                <li class="has-child"><a href="javascript:;">Jobs</a>
                                     <ul class="sub-menu">
                                         <li><a href="job.html">Jobs</a></li>
-                                        <li><a href="job-list.html">Jobs list</a></li>
                                         <li><a href="job-detail.html">Jobs Detail</a></li>
                                        
                                         <li><a href="apply-job.html">Apply Jobs</a></li>
@@ -231,10 +230,10 @@
                 <!-- SITE Search -->
                 <div id="search">
                     <span class="close"></span>
-                    <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
-                        <input class="form-control" value="" name="q" type="search" placeholder="Type to search">
+                    <form role="search" id="searchform" action="job.html" method="get" class="radius-xl">
+                        <input class="form-control" value="" name="q" type="search" placeholder="Type to search job vacancy...">
                         <span class="input-group-append">
-                            <button type="button" class="search-btn">
+                            <button type="submit" class="search-btn">
                                 <i class="fa fa-paper-plane"></i>
                             </button>
                         </span>
@@ -513,173 +512,206 @@
 
             <!-- WHY CHOOSE US SECTION START -->
             <style>
-                .dark-theme-section {
-                    background-color: #f9f9f9;
+                .why-section-client {
+                    background: #f8fafc;
                     position: relative;
-                    overflow: hidden;
                 }
 
-                .dark-theme-section::before {
-                    content: '';
-                    position: absolute;
-                    top: -100px;
-                    left: -100px;
-                    width: 400px;
-                    height: 400px;
-                    background: radial-gradient(circle, rgba(255, 130, 0, 0.05) 0%, rgba(249, 249, 249, 0) 70%);
-                    border-radius: 50%;
-                }
-
-                .core-value-pill {
-                    background: #ff8200;
-                    color: #ffffff;
-                    text-transform: uppercase;
-                    font-size: 11px;
-                    font-weight: 800;
-                    letter-spacing: 1px;
-                    padding: 8px 24px;
-                    border-radius: 30px;
-                    display: inline-block;
-                    box-shadow: 0 4px 15px rgba(255, 130, 0, 0.4);
-                    margin-bottom: 20px;
-                }
-
-                .dark-theme-title {
-                    color: #06285e;
-                    font-size: 42px;
-                    font-weight: 800;
-                    margin-bottom: 50px;
-                }
-
-                .dark-card {
-                    background-color: #ffffff;
-                    border: 1px solid #e0e6ed;
-                    border-radius: 15px;
-                    padding: 40px 25px;
-                    text-align: center;
+                .why-feature-card-client {
+                    background: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 20px;
+                    padding: 34px 28px;
                     height: 100%;
-                    transition: all 0.3s ease;
-                    box-shadow: 0 5px 15px rgba(6, 40, 94, 0.05);
+                    position: relative;
+                    transition: all 0.35s ease;
+                    box-shadow: 0 6px 20px rgba(6, 40, 94, 0.04);
+                    display: flex;
+                    flex-direction: column;
                 }
 
-                .dark-card:hover {
-                    transform: translateY(-5px);
-                    border-color: #ff8200;
-                    box-shadow: 0 10px 30px rgba(6, 40, 94, 0.1);
+                .why-feature-card-client:hover {
+                    transform: translateY(-8px);
+                    border-color: #ff9800;
+                    box-shadow: 0 16px 35px rgba(6, 40, 94, 0.12);
                 }
 
-                .dark-icon-wrap {
-                    width: 70px;
-                    height: 70px;
-                    background-color: #fff3e0;
-                    border-radius: 50%;
-                    display: inline-flex;
+                .why-card-header-client {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 22px;
+                }
+
+                .why-icon-wrap-client {
+                    width: 58px;
+                    height: 58px;
+                    border-radius: 16px;
+                    background: #f4f7fb;
+                    color: #06285e;
+                    display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin-bottom: 25px;
+                    font-size: 24px;
+                    transition: all 0.3s ease;
                 }
 
-                .dark-icon-wrap i {
-                    color: #ff8200;
-                    font-size: 32px;
+                .why-feature-card-client:hover .why-icon-wrap-client {
+                    background: #ff9800;
+                    color: #ffffff;
+                    transform: scale(1.08);
                 }
 
-                .dark-card-title {
+                .why-watermark-num-client {
+                    font-size: 28px;
+                    font-weight: 800;
+                    color: #e2e8f0;
+                    transition: color 0.3s ease;
+                }
+
+                .why-feature-card-client:hover .why-watermark-num-client {
+                    color: rgba(255, 152, 0, 0.35);
+                }
+
+                .why-card-heading-client {
                     color: #06285e;
-                    font-size: 20px;
+                    font-size: 19px;
                     font-weight: 700;
-                    margin-bottom: 15px;
-                    line-height: 1.3;
+                    margin-bottom: 14px;
+                    line-height: 1.35;
                 }
 
-                .dark-card-desc {
-                    color: #555555;
+                .why-card-text-client {
+                    color: #556270;
                     font-size: 14px;
-                    line-height: 1.6;
-                    margin-bottom: 25px;
+                    line-height: 1.75;
+                    margin: 0;
+                    flex: 1;
                 }
 
-                .dark-card-link {
-                    color: #ff8200;
-                    font-size: 14px;
+                .tp-badge-client {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 6px;
+                    background: rgba(6, 40, 94, 0.08);
+                    color: #06285e;
+                    padding: 6px 18px;
+                    border-radius: 50px;
+                    font-size: 13px;
                     font-weight: 700;
-                    text-decoration: none;
-                    display: inline-block;
-                    transition: all 0.3s;
-                }
-
-                .dark-card-link:hover {
-                    color: #ffa74d;
-                }
-
-                .dark-card-link i {
-                    margin-left: 5px;
-                    transition: transform 0.3s;
-                }
-
-                .dark-card-link:hover i {
-                    transform: translateX(5px);
+                    letter-spacing: 0.5px;
+                    text-transform: uppercase;
+                    margin-bottom: 16px;
                 }
             </style>
-            <div class="section-full p-t100 p-b90 dark-theme-section">
-                <div class="container" style="position: relative; z-index: 1;">
-                    <!-- TITLE START-->
-                    <div class="section-head center">
-                        <div class="core-value-pill">Our Core Value</div>
-                        <h2 class="dark-theme-title">Why Choose Us</h2>
+            <div class="section-full p-t100 p-b90 why-section-client">
+                <div class="container">
+                    <div class="section-head center wt-small-separator-outer text-center mb-5">
+                        <div class="tp-badge-client">
+                            <i class="feather-check-circle"></i> Key Strengths
+                        </div>
+                        <h2 class="wt-title" style="font-size: 40px; font-weight: 800; color: #06285e;">
+                            Why Choose <span style="color: #ff9800;">Talent Partner?</span>
+                        </h2>
+                        <p style="max-width: 720px; margin: 14px auto 0; color: #556270; font-size: 16px;">
+                            We provide deep domain expertise, ethical stewardship, and dedicated focus to empower employers and career aspirants.
+                        </p>
                     </div>
-                    <!-- TITLE END-->
 
-                    <div class="row justify-content-center">
-                        <div class="col-lg-3 col-md-6 m-b30">
-                            <div class="dark-card">
-                                <div class="dark-icon-wrap">
-                                    <i class="flaticon-user"></i>
+                    <div class="row">
+                        <!-- Pillar 1 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card-client">
+                                <div class="why-card-header-client">
+                                    <div class="why-icon-wrap-client">
+                                        <i class="feather-award"></i>
+                                    </div>
+                                    <span class="why-watermark-num-client">01</span>
                                 </div>
-                                <h3 class="dark-card-title">Consultants And<br>Organizations</h3>
-                                <p class="dark-card-desc">We supply quality candidates and elevate your business with
-                                    our exceptional sourcing service.</p>
-                                <a href="contact.html" class="dark-card-link">Learn More <i
-                                        class="fa fa-arrow-right"></i></a>
+                                <h3 class="why-card-heading-client">15+ Years of HR Expertise</h3>
+                                <p class="why-card-text-client">
+                                    Our leadership is backed by over 15 years of hands-on Human Resources experience, bringing practical industry knowledge and a strong understanding of recruitment and workforce needs.
+                                </p>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 m-b30">
-                            <div class="dark-card">
-                                <div class="dark-icon-wrap">
-                                    <i class="flaticon-deal"></i>
+                        <!-- Pillar 2 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card-client">
+                                <div class="why-card-header-client">
+                                    <div class="why-icon-wrap-client">
+                                        <i class="feather-user-check"></i>
+                                    </div>
+                                    <span class="why-watermark-num-client">02</span>
                                 </div>
-                                <h3 class="dark-card-title">Support from Job<br>Seekers</h3>
-                                <p class="dark-card-desc">Transitions are daunting. We help you present your best
-                                    campaign and secure your next big role.</p>
-                                <a href="contact.html" class="dark-card-link">Learn More <i
-                                        class="fa fa-arrow-right"></i></a>
+                                <h3 class="why-card-heading-client">Client-Centric Recruitment Approach</h3>
+                                <p class="why-card-text-client">
+                                    We invest time in understanding each client's business objectives, hiring priorities, and organizational requirements to deliver recruitment support aligned with their needs.
+                                </p>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 m-b30">
-                            <div class="dark-card">
-                                <div class="dark-icon-wrap">
-                                    <i class="flaticon-project-management"></i>
+                        <!-- Pillar 3 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card-client">
+                                <div class="why-card-header-client">
+                                    <div class="why-icon-wrap-client">
+                                        <i class="feather-search"></i>
+                                    </div>
+                                    <span class="why-watermark-num-client">03</span>
                                 </div>
-                                <h3 class="dark-card-title">Process and<br>Guidance</h3>
-                                <p class="dark-card-desc">Get end-to-end guidance through complex hiring stages,
-                                    ensuring compliance and confidence.</p>
-                                <a href="contact.html" class="dark-card-link">Learn More <i
-                                        class="fa fa-arrow-right"></i></a>
+                                <h3 class="why-card-heading-client">Quality-Driven Talent Identification</h3>
+                                <p class="why-card-text-client">
+                                    We emphasize the alignment of qualifications, competencies, experience, and professional suitability to help organizations identify candidates who meet their role requirements.
+                                </p>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 m-b30">
-                            <div class="dark-card">
-                                <div class="dark-icon-wrap">
-                                    <i class="flaticon-hr"></i>
+                        <!-- Pillar 4 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card-client">
+                                <div class="why-card-header-client">
+                                    <div class="why-icon-wrap-client">
+                                        <i class="feather-shield"></i>
+                                    </div>
+                                    <span class="why-watermark-num-client">04</span>
                                 </div>
-                                <h3 class="dark-card-title">Fast & Secure Core<br>Process</h3>
-                                <p class="dark-card-desc">Our highly secure platform gives you a safe path with
-                                    automated functions across the process.</p>
-                                <a href="contact.html" class="dark-card-link">Learn More <i
-                                        class="fa fa-arrow-right"></i></a>
+                                <h3 class="why-card-heading-client">Integrity and Transparency</h3>
+                                <p class="why-card-text-client">
+                                    We believe that trust is the foundation of every successful professional relationship. Our approach is guided by ethical practices, clear communication, and professional accountability.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 5 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card-client">
+                                <div class="why-card-header-client">
+                                    <div class="why-icon-wrap-client">
+                                        <i class="feather-heart"></i>
+                                    </div>
+                                    <span class="why-watermark-num-client">05</span>
+                                </div>
+                                <h3 class="why-card-heading-client">People-Focused Philosophy</h3>
+                                <p class="why-card-text-client">
+                                    We recognize the importance of understanding both employer expectations and candidate aspirations to facilitate productive, mutually beneficial professional relationships.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Pillar 6 -->
+                        <div class="col-lg-4 col-md-6 m-b30">
+                            <div class="why-feature-card-client">
+                                <div class="why-card-header-client">
+                                    <div class="why-icon-wrap-client">
+                                        <i class="feather-star"></i>
+                                    </div>
+                                    <span class="why-watermark-num-client">06</span>
+                                </div>
+                                <h3 class="why-card-heading-client">Commitment to Excellence</h3>
+                                <p class="why-card-text-client">
+                                    We strive to deliver responsive, dependable, and professional recruitment support, with a focus on service quality, effective coordination, and lasting value.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -766,7 +798,7 @@
                                 <!-- <p>Many desktop publishing packages and web page editors now.</p> -->
                                 <ul class="ftr-list">
                                     <li>
-                                        <p><span>Address :</span>Shreeji Signature, Seagat Reliance Road, Sargansan, Gandhinagar 382419</p>
+                                        <p><span>Address :</span>Shreeji Signature, Seagat Reliance Road, Sargasan, Gandhinagar 382419</p>
                                     </li>
                                     <li>
                                         <p><span>Email :</span>hiring@2etalentpartners.com</p>
