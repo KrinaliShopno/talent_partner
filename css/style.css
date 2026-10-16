@@ -9021,8 +9021,9 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   right: 0px;
   top: 0px;
   bottom: 0px;
-  left: 100px;
+  left: 0px;
   background-color: #f9fcff;
+  border: 1px solid #eef2f6;
   content: "";
   z-index: -1;
   border-radius: 10px;
@@ -9052,13 +9053,13 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 .twm-testimonial-1 .twm-testimonial-1-content .twm-testi-content {
-  display: table-cell;
-  padding: 50px 30px 50px 30px;
+  display: block;
+  padding: 45px 35px;
 }
 
 @media (max-width: 575px) {
   .twm-testimonial-1 .twm-testimonial-1-content .twm-testi-content {
-    padding: 0px;
+    padding: 30px 20px;
   }
 }
 

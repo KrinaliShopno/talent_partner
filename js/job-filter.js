@@ -1,5 +1,5 @@
 /* ========================================================
-   Job Filter & Search Functionality - Talent Partner
+   Job Filter & Search Functionality - TwoE Talent Partners
 ======================================================== */
 (function ($) {
     'use strict';
